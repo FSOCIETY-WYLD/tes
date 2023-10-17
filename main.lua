@@ -345,18 +345,6 @@ end
     })
   end
 
-  -- Überprüfen, ob die syn.protect_gui-Funktion verfügbar ist und das GUI-Element schützen
-  if syn.protect_gui then
-      syn.protect_gui(Window)  -- GUI-Element schützen
-      Window.Parent = CoreGui  -- GUI-Element zum CoreGui hinzufügen
-  -- Überprüfen, ob die gethui-Funktion verfügbar ist und das GUI-Element erstellen
-  elseif gethui then
-      local customGui = gethui()  -- GUI-Element erstellen
-      Window.Parent = customGui   -- GUI-Element zum von gethui() zurückgegebenen GUI hinzufügen
-  -- Wenn keine der oben genannten Bedingungen erfüllt ist, das GUI-Element dem CoreGui hinzufügen
-  else
-      Window.Parent = CoreGui  -- GUI-Element zum CoreGui hinzufügen
-  end
 
 
   local ResizeButton = Window.Main.Bottom.ResizeIcon.ResizeButton
